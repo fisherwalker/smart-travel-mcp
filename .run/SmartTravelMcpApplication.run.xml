@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SmartTravelMcpApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="smart-travel-mcp" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.travel.mcp.SmartTravelMcpApplication" />
+    <option name="VM_PARAMETERS" value="-Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=7897 -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=7897" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
