@@ -1,0 +1,26 @@
+{
+  "name": "smart-travel-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "智慧旅游AI助手 - Vue 3 前端",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.6.7",
+    "element-plus": "^2.7.0",
+    "highlight.js": "^11.11.1",
+    "marked": "^12.0.0",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.0"
+  }
+}
