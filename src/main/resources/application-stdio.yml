@@ -1,0 +1,43 @@
+# ============================================
+# STDIO 模式：连接 Claude Desktop 演示使用
+# 启动方式：IDEA中激活 stdio profile
+# ============================================
+spring:
+  application:
+    name: smart-travel-mcp
+  # H2 内存数据库（STDIO模式无需MySQL）
+  datasource:
+    url: jdbc:h2:mem:smart_travel;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  # 禁用 Web
+  main:
+    web-application-type: none
+    banner-mode: off
+  # MCP STDIO
+  ai:
+    mcp:
+      server:
+        enabled: true
+        name: smart-travel-mcp-server
+        version: 1.0.0
+        type: SYNC
+        stdio: true
+        sse:
+          enabled: false
+
+logging:
+  level:
+    root: OFF
+    com.travel.mcp: OFF

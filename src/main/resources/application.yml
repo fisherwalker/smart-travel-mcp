@@ -1,0 +1,57 @@
+# ============================================
+# 主配置：MySQL + SSE + Web 聊天界面
+# ============================================
+spring:
+  application:
+    name: smart-travel-mcp
+  # MySQL 数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/smart_travel?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 20051121222x
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  # MCP
+  ai:
+    mcp:
+      server:
+        enabled: true
+        name: smart-travel-mcp-server
+        version: 1.0.0
+        type: SYNC
+        stdio: false
+        sse:
+          message-endpoint: /mcp/message
+          endpoint: /sse
+
+server:
+  port: 8080
+  # Tomcat 异步请求超时（SSE 长连接需要）
+  tomcat:
+    connection-timeout: 300000
+    async-timeout: 300000
+
+# DeepSeek API Key — 用户登录后在页面中配置，不再硬编码
+deepseek:
+  api-key:
+
+# ============================================
+# HTTP 代理配置（访问外网 API 使用）
+# ============================================
+proxy:
+  host: 127.0.0.1
+  port: 7897
+  type: HTTP
+
+# ============================================
+# 天气 API（Open-Meteo 免费 API，无需 Key）
+# 全球覆盖，每天 10000 次免费调用
+# ============================================
